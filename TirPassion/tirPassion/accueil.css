@@ -1,0 +1,40 @@
+/* Section Hero */
+.hero {
+    display: flex;
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement */
+    height: 400px; /* Ajustez la hauteur selon vos besoins */
+    background-color: #f5f5f5; /* Couleur de fond */
+    margin-bottom: 20px;
+}
+
+.hero-content {
+    text-align: center; /* Centre le contenu */
+}
+
+.hero-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 60px;
+}
+
+/* Section Categories */
+.categories {
+    display: flex;
+    justify-content: center; /* Centre les catégories horizontalement */
+    flex-wrap: wrap; /* Permet un retour à la ligne si nécessaire */
+    gap: 20px; /* Ajoute de l'espace entre les catégories */
+    margin: 20px auto;
+}
+
+.category-image {
+    max-width: 150px; /* Taille des icônes */
+    height: auto;
+    border-radius: 5px;
+    transition: transform 0.3s ease; /* Animation sur survol */
+}
+
+.category-image:hover {
+    transform: scale(1.1); /* Agrandit légèrement l'image au survol */
+}

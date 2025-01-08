@@ -1,0 +1,28 @@
+/* Style pour le fond de la page */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    /* background-image: url('../tirPassion/photo/Fonddesite.png'); Chemin vers l'image */
+    background-color: red;
+    background-size: cover; /* Ajuste l'image pour couvrir toute la page */
+    background-position: center; /* Centre l'image */
+    background-attachment: fixed; /* Fixe l'image pour qu'elle reste en place lors du défilement */
+    background-repeat: no-repeat; /* Empêche la répétition de l'image */
+    
+
+    
+}
+
+/* Pour un léger effet de transparence sur le contenu principal */
+main {
+    background-color: rgba(255, 255, 255, 0.9); /* Fond blanc légèrement transparent */
+    padding: 20px;
+    border-radius: 10px; /* Coins arrondis */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Ombre autour du contenu */
+}
+
+.backround {
+
+    background-color: brown;
+}
