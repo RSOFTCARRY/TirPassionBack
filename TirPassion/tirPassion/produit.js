@@ -1,39 +1,20 @@
-/**
- * Fonction Magic Scroll
- * @param {string} target - Sélecteur CSS de l'élément cible.
- * @param {number} duration - Durée du défilement en millisecondes.
- */
-function magicScroll(target, duration = 1000) {
-    const element = document.querySelector(target);
-  console.log(element)
-    if (!element) {
-      console.error();
-      return;
+// Gestion des quantités
+const quantityElement = document.getElementById('quantity');
+const decreaseBtn = document.getElementById('decrease-qty');
+const increaseBtn = document.getElementById('increase-qty');
+
+let quantity = 1;
+
+// Décrémentation
+decreaseBtn.addEventListener('click', () => {
+    if (quantity > 1) {
+        quantity--;
+        quantityElement.textContent = quantity;
     }
-  
-    const targetPosition = element.getBoundingClientRect().top + window.pageYOffset;
-    const startPosition = window.pageYOffset;
-    const distance = targetPosition - startPosition;
-    let startTime = null;
-  
-    function animation(currentTime) {
-      if (startTime === null) startTime = currentTime;
-  
-      const timeElapsed = currentTime - startTime;
-      const run = easeInOutQuad(timeElapsed, startPosition, distance, duration);
-  
-      window.scrollTo(0, run);
-  
-      if (timeElapsed < duration) requestAnimationFrame(animation);
-    }
-  
-    // Fonction d'interpolation pour un effet fluide
-    function easeInOutQuad(t, b, c, d) {
-      t /= d / 2;
-      if (t < 1) return c / 2 * t * t + b;
-      t--;
-      return -c / 2 * (t * (t - 2) - 1) + b;
-    }
-  
-    requestAnimationFrame(animation);
-  }
+});
+
+// Incrémentation
+increaseBtn.addEventListener('click', () => {
+    quantity++;
+    quantityElement.textContent = quantity;
+});

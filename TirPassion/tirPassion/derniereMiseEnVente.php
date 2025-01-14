@@ -32,7 +32,7 @@
             </div>
             </div>  </a>
 
-            <a href= "#">
+            <a href= "\TirPassion\tirPassion\produit.php">
             <div class="product-sale">
             
             <div class="image-container">

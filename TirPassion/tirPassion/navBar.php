@@ -39,6 +39,7 @@
             <li><a href="#" class="nav-link">Outdoor</a></li>
             <li><a href="#" class="nav-link">Chasse</a></li>
             <li><a href="#" class="nav-link">Pêche</a></li>
+            <li><a href="#" class="nav-link">Collection</a></li>
         </ul>
         <div class="user-actions">
             <img src="../tirPassion/logo/favorieBig.png" alt="Favoris" class="icon">

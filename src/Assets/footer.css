@@ -1,0 +1,41 @@
+.footer {
+    background-color: #f8f9fa; /* Couleur de fond */
+    padding: 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+  
+  .footer-top {
+    margin-bottom: 20px;
+  }
+  
+  .footer-top a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #007bff;
+  }
+  
+  .footer-top a:hover {
+    text-decoration: underline;
+  }
+  
+  .footer-contact {
+    color: #333;
+  }
+  
+  .footer-contact .logo-text {
+    font-weight: bold;
+  }
+  
+  .footer-contact .red {
+    color: red;
+  }
+  
+  .footer-contact a {
+    color: #007bff;
+  }
+  
+  .footer-contact a:hover {
+    text-decoration: underline;
+  }
+  

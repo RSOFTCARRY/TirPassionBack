@@ -4,7 +4,7 @@ session_start();
 
 // Informations de connexion à la base de données
 $host = 'localhost';
-$dbname = 'ecommerce';
+$dbname = 'tirpassion';
 $username = 'root';
 $password = '';
 
@@ -14,6 +14,7 @@ try {
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
     die("Erreur de connexion : " . $e->getMessage());
+    
 }
 
 // Initialiser les messages d'erreur
@@ -23,24 +24,27 @@ $error_message = '';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $identifiant = $_POST['identifiant'] ?? '';
     $mot_de_passe = $_POST['mot_de_passe'] ?? '';
+    
 
     if (!empty($identifiant) && !empty($mot_de_passe)) {
         // Rechercher l'utilisateur par pseudo ou email
-        $sql = "SELECT ID, Pseudo, Email, TypeUtilisateur, mot_de_passe FROM utilisateurs 
+        $sql = "SELECT * FROM utilisateurs 
                 WHERE Pseudo = :identifiant OR Email = :identifiant";
         $stmt = $pdo->prepare($sql);
         $stmt->execute(['identifiant' => $identifiant]);
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
         // Vérifier si l'utilisateur existe et si le mot de passe est correct
-        if ($user && password_verify($mot_de_passe, $user['mot_de_passe'])) {
+        // if ($user && password_verify($mot_de_passe, $user['mot_de_passe'])) {
+        if ($user && ($mot_de_passe === $user['mot_de_passe'])) {
+
             // Enregistrer les informations de l'utilisateur dans la session
             $_SESSION['user_id'] = $user['ID'];
             $_SESSION['user_pseudo'] = $user['Pseudo'];
-            $_SESSION['user_type'] = $user['TypeUtilisateur'];
+            // $_SESSION['user_type'] = $user['TypeUtilisateur'];
 
-            // Rediriger l'utilisateur (par exemple, vers une page d'accueil)
-            header('Location: accueil.php');
+            // Redirection de l'utilisateur
+            header('Location: indexTirPassion.php');
             exit;
         } else {
             $error_message = "Identifiant ou mot de passe incorrect.";
@@ -72,6 +76,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <input type="password" id="mot_de_passe" name="mot_de_passe" required><br><br>
 
         <button type="submit">Se connecter</button>
+        <!-- <button type="button" class="action-button secondary">Retour accueil</button> -->
+        
     </form>
 </body>
 </html>

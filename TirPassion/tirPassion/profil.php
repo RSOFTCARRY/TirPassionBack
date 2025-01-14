@@ -45,6 +45,9 @@
                 <label for="file-upload" class="file-upload-label">Votre K-BIS</label>
                 <label for="file-upload" class="file-upload-label">Votre Autorisation de commerce</label>
                 <label for="file-upload" class="file-upload-label">Votre AFCI</label>
+                <label for="file-upload" class="file-upload-label">Votre Licence</label>
+                <label for="file-upload" class="file-upload-label">Votre Permis de chasse</label>
+                <label for="file-upload" class="file-upload-label">Votre Certificat médical</label>
                 
                 <input type="file" id="file-upload">
             </div>
